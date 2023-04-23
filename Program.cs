@@ -11,7 +11,7 @@ namespace FILES
     {
         static void Main(string[] args)
         {
-            string path = "old.cs";
+            string path = "..\\..\\old.cs";
             string text;
             using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None))
             {
@@ -21,7 +21,7 @@ namespace FILES
                 }
             }
             text = text.Replace("public", "private");
-            using (FileStream fs = new FileStream("new.cs", FileMode.Create, FileAccess.Write, FileShare.None))
+            using (FileStream fs = new FileStream("..\\..\\new.cs", FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 using (StreamWriter sw = new StreamWriter(fs)) {
                 sw.WriteLine(text);
